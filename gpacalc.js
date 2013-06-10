@@ -1,5 +1,7 @@
 javascript:void(function(){var s=document.createElement('script'); s.src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'; document.getElementsByTagName('head')[0].appendChild(s);}());
 
+var col = prompt('Which column of grades? 1,2,3, or 4?');
+
 window.setTimeout(function() {
 
 function letterToGPA(lettergrades) {
@@ -25,6 +27,6 @@ function arrayAverage(averagedArray) {
   for(var x = 0; x < averagedArray.length; x++) { total = total + parseFloat(averagedArray[x]); } return(total/averagedArray.length);
 }
 
-var i = 0, lettergrades=[], numericgrades=[], grades=[], sum=0; $.each($('a'), function() { if (this.href.indexOf('scores.html') != -1) { i++; if(this.innerText.indexOf('--')==-1 && i==2) { grades.push(this.innerText.split("\n")); lettergrades[grades.length-1]=grades[grades.length-1][0]; numericgrades[grades.length-1]=grades[grades.length-1][1]; } } if (i==4) i=0; }); alert(letterToGPA(lettergrades));
+var i = 0, lettergrades=[], numericgrades=[], grades=[], sum=0; $.each($('a'), function() { if (this.href.indexOf('scores.html') != -1) { i++; if(this.innerText.indexOf('--')==-1 && i==col) { grades.push(this.innerText.split("\n")); lettergrades[grades.length-1]=grades[grades.length-1][0]; numericgrades[grades.length-1]=grades[grades.length-1][1]; } } if (i==4) i=0; }); alert(letterToGPA(lettergrades));
 
 }, 300);
